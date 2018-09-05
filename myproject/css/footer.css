@@ -1,0 +1,107 @@
+@media screen and (min-width:1200px) {
+  .my_width{
+    width: 1200px;
+    margin: 0 auto !important;
+  }
+}
+@media screen and (max-width: 1200px) and (min-width: 570px){
+  .my_width{
+    max-width: 560px;
+  }
+}
+@media screen and (max-width: 570px){
+  .my_width{
+    max-width: 262px;
+  }
+}
+#footer>div:first-child{
+  background: #282e3f;
+}
+#footer>div:last-child{
+  background:#424F6C;
+}
+#footer>div>div.row>div>ul>li>span:first-child{
+  width: 26px;
+  height: 21px;
+  background: url(../img/index/foot_icon.png) no-repeat;
+  vertical-align: middle;
+}
+#footer>div>div.row>div>ul>li:first-child>span:first-child{
+  background-position: 0 0;
+}
+#footer>div>div.row>div>ul>li:nth-child(2)>span:first-child{
+  background-position: 0 -22px;
+}
+#footer>div>div.row>div>ul>li:nth-child(3)>span:first-child{
+  background-position: 0 -44px;
+}
+#footer h3{
+  color: #838da9;
+  border-bottom: 1px solid #383838;
+  position: relative;
+}
+#footer h3:after{
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left:0;
+  width: 40px;
+  height: 0;
+  border-top: 1px solid #7bd9e7;
+}
+#footer>div>div.row>div>ul>li>span:nth-child(2){
+  width: 236px;
+  color: #545e7c;
+}
+#footer>div>div.row>div a{
+  color: #545e7c;
+}
+#footer>div>div.row>div a:hover{
+  color: #7bd9e7;
+}
+#footer>div>div.row>div:nth-child(2)>ul>li{
+  color: #7bd9e7;
+  border-bottom:1px solid #111931;
+}
+#footer>div>div.row>div:nth-child(3)>a{
+  border: 1px solid #545e7c;
+  padding: 2px 5px;
+  margin-right: 5px;
+}
+#footer>div>div.row>div:nth-child(3)>a:hover{
+  border: 1px solid #7bd9e7;
+}
+#footer>div>div.row>div:nth-child(4)>img{
+  width: 180px;
+  height: 180px;
+}
+/*第二部分*/
+.copyright>p,.copyright>ul{
+  width: 50%;
+}
+@media screen and (max-width: 1200px){
+  .copyright>p,.copyright>ul{
+    width: 100%;
+  }
+}
+.copyright{
+  color:  #7081a8;
+}
+.copyright a{
+  color:#7081a8;
+}
+.copyright a:hover{
+  color: #7bd9e7;
+}
+.copyright>ul>li{
+  position: relative;
+}
+.copyright>ul>li:after{
+  content: "";
+  height: 10px;
+  border-left: 1px solid #000;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -5px;
+}

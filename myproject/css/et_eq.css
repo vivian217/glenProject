@@ -1,0 +1,17 @@
+#section>div:last-child>ul>li{
+  position: relative;
+  border-bottom: 1px dashed #999;
+  padding: 0.5rem 0;
+  margin: 0 0.5rem;
+}
+#section>div:last-child>ul>li>a{
+  color: #999;
+}
+#section>div:last-child>ul>li>a:hover{
+  color: #333;
+}
+#section>div:last-child>ul>li>a>span:last-child{
+  position: absolute;
+  right: 0;
+  font-size: 0.8rem;
+}

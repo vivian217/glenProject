@@ -1,0 +1,15 @@
+#section>div:last-child>div>img{
+  width: 100%;
+}
+#section>div:last-child>div>div{
+  width: 50%;
+  float: left;
+  margin-bottom: 1rem;
+}
+#section>div:last-child>div>div>img{
+  float: left;
+  margin-right: 0.5rem;
+}
+#section>div:last-child>div>hr{
+  clear: both;
+}

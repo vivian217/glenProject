@@ -1,0 +1,110 @@
+.my_border{
+  border-bottom: 0.2rem solid #7bd9e7;
+}
+@media screen and (min-width:1200px){
+  .my_font{
+    font-size: 1.2rem;
+  }
+}
+@media screen and (min-width:768px) and (max-width:1200px) {
+  .hidden_md{
+    display: none;
+  }
+  .my_font{
+    font-size: 1.1rem;
+  }
+}
+header .navbar li:hover{
+  background: #7bd9e7 !important;
+}
+.my_product{
+  display: none;
+  left: -50%;
+}
+#product:hover>ul.my_product{
+  display: block;
+}
+ul.my_product a{
+  color: #fff;
+}
+/*侧边导航栏*/
+div.inquiry_bef,div.inquiry_aft{
+  position: fixed;
+  z-index: 1000;
+  top: 250px;
+  right: 0;
+}
+div.inquiry_bef{
+  width: 57px;
+}
+div.inquiry_aft{
+  width: 169px;
+  background: #1d7ccf;
+  display: none;
+}
+div.inquiry_aft>ul>li{
+  text-align: center;
+  font-size: 0.8rem;
+  color:#fff;
+}
+div.inquiry_aft>ul>li:nth-child(4){
+  background: #9fa0a4;
+}
+div.inquiry_aft>ul>li:first-child,div.inquiry_aft>ul>li:nth-child(2),div.inquiry_aft>ul>li:nth-child(3){
+  border-bottom: 1px solid #61a4dd;
+}
+div.inquiry_aft>ul>li:nth-child(2n){
+  padding: 0.5rem 0;
+}
+div.inquiry_aft>ul>li>span{
+  text-align: left;
+}
+div.inquiry_aft>ul>li>a{
+  color: #fff;
+}
+/*二级侧边栏*/
+div.sub_inq{
+  display: none;
+  width: 310px;
+  padding: 10px 25px;
+  position: fixed;
+  z-index: 1000;
+  top: 250px;
+  right: 57px;
+  background: #f0f1f3;
+  border: 1px solid #d0d8e2;
+  border-bottom: none;
+  font-size: 0.6rem;
+}
+div.sub_inq>p:first-child{
+  background: url("../img/sidebar/ftit.png") no-repeat;
+  text-align: right;
+  height: 38px;
+}
+div.sub_inq>p:nth-child(2){
+  color: #333;
+  text-shadow: 1px 1px 0 #c7c7c7;
+}
+div.sub_inq input,div.sub_inq>textarea{
+  width: 100%;
+  padding: 0.5rem;
+}
+div.sub_inq input{
+  margin-bottom: 10px;
+}
+div.sub_inq>textarea{
+  resize: none;
+  height: 100px;
+  box-shadow: 4px 4px 0 #8a9b8c;
+}
+div.sub_inq>a{
+  margin:1rem auto;
+  display: block;
+  width: 90px;
+  height: 34px;
+  background: url(../img/sidebar/submit.png) no-repeat;
+  background-position:0 3%;
+}
+div.sub_inq>a:hover{
+  background-position: 0 100%;
+}
