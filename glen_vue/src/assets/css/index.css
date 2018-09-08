@@ -1,0 +1,223 @@
+/*a按钮标签背景*/
+a.btn{
+  background: #7bd9e7;
+}
+/*轮播图样式*/
+@media screen and (min-width: 1800px){
+  #carousel{
+    width: 1800px;
+    height: 480px;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 1799px){
+  #carousel{
+    width: device-width;
+  }
+  #carousel>div.carousel-inner>div.carousel-item{
+    width: 100%;
+  }
+  #carousel>div.carousel-inner>div.carousel-item>img{
+    width: 100%;
+  }
+}
+/*搜索框样式*/
+.my_search{
+  width:456px;
+  height:52px;
+  left:50%;
+  bottom:16%;
+  margin-left:-238px;
+  border-radius:26px;
+  background-color:rgba(102, 102, 102, 0.8);
+  overflow: hidden;
+}
+.my_search>input{
+  margin-left: 36px;
+}
+.my_search>button{
+  width: 15%;
+  right: 0;
+  background: #7bd9e7 url(../../../public/img/index/search_ico.png) no-repeat;
+  background-position: center;
+}
+/*公司介绍样式*/
+#introduce>div>div.my_img{
+  border: 0.4rem solid #7bd9e7;
+}
+#introduce>div>div.my_img>img{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 4rem;
+  left: 4rem;
+}
+@media screen and (max-width: 768px){
+  #introduce>div>div.my_img{
+    width: 90%;
+  }
+  #introduce>div>div.my_img>img{
+    top: 2rem;
+    left: 2rem;
+  }
+}
+#introduce span{
+  width: 5rem;
+  height: 0.3rem;
+  background: #000000;
+}
+#introduce p{
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+/*标题样式*/
+.my_title{
+  margin: 5rem auto 3rem;
+}
+.my_title>h3{
+  text-align: center;
+  font-weight: bold;
+}
+.my_title>span{
+  display: block;
+  margin: 1rem auto;
+  width: 5rem;
+  height: 0.3rem;
+  background: #7bd9e7;
+}
+/*主体部分图片样式*/
+div.row img{
+  width: 100%;
+  height: 100%;
+}
+/*主要产品样式*/
+#products div.cover{
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background: rgba(123, 217, 231, 0.9);
+  transition: all .5s linear;
+}
+#products div.cover>div.coverText{
+  width: 100%;
+  position: absolute;
+  top: 30%;
+  text-align: center;
+  color: #fff;
+}
+#products div.cover>div.coverText>a{
+  color: #7bd9e7;
+}
+#products>div.row>div:hover>div.cover{
+  opacity:1;
+}
+/*设备和质检样式*/
+#my_news>div.news_bg{
+  width: 100%;
+  height: 460px;
+  background: #f2f2f2;
+  position: absolute;
+  z-index: -1;
+}
+#my_news>div.my_width_xl>div.row{
+  box-shadow: 2px 2px 4px 2px #eaeaea;
+}
+div.news,div.news_img,div.news_text{
+  width: 50%;
+}
+@media screen and (max-width: 768px){
+  div.news_img,div.news_text{
+    width: 100%;
+  }
+}
+#my_news ul{
+  width: 100%;
+}
+#my_news ul>li{
+  width: 50%;
+}
+@media screen and (max-width: 768px){
+  #my_news ul>li{
+    width: 100%;
+  }
+}
+div.news_text>a:first-child{
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: #333;
+}
+div.date>span:first-child{
+  display: block;
+  font-size: 3.5rem;
+  color: #656565;
+}
+div.date>span:last-child{
+  font-size: 1.2rem;
+}
+div.date{
+  border-right:1px solid #cecece;
+}
+div.text>a{
+  color: #000;
+}
+div.text>p{
+  color:#cfcccc;
+}
+/*联系*/
+.my_connect{
+  background-image: url(../../../public/img/index/pattern_bg.png);
+}
+.my_connect div.email-box{
+  width: 60%;
+}
+.my_connect div.email-box::before{
+  content: "";
+  display: table;
+}
+.my_connect p.email{
+  background: rgba(255, 255, 255, 0.2);
+  position: relative;
+}
+.my_connect p.email>input:focus{
+  outline: none;
+}
+.my_connect p.email>input[type="button"]{
+  background: url(../../../public/img/index/email.png) no-repeat;
+  background-position: 50% 50%;
+  width:46px;
+  position: absolute;
+  right: 1rem;
+}
+.my_connect div.connect_icon{
+  top: 50%;
+  right: 2rem;
+  z-index: 10;
+}
+.my_connect div.connect_icon>a{
+  display: inline-block;
+  width: 46px;
+  height: 46px;
+  margin: .5rem;
+  opacity: .7;
+  background-image: url("../../../public/img/index/share_icos.png");
+}
+.my_connect div.connect_icon>a:hover{
+  opacity: 1;
+}
+.my_connect div.connect_icon>a:first-child{
+  background-position: -2px;
+}
+.my_connect div.connect_icon>a:nth-child(2){
+  background-position: -58px;
+}
+.my_connect div.connect_icon>a:nth-child(3){
+  background-position: -116px;
+}
+.my_connect div.connect_icon>a:nth-child(4){
+  background-position: -172px;
+}
+.my_connect div.connect_icon>a:nth-child(5){
+  background-position: -227px;
+}

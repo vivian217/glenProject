@@ -1,0 +1,22 @@
+/*网页背景颜色*/
+.my_bg{
+  background: #7bd9e7;
+}
+.my_color{
+  color: #7bd9e7;
+}
+div.row{
+  margin:0;
+}
+@media screen and (min-width:1200px) {
+  .my_width_xl {
+    width: 1200px;
+    margin: 0 auto !important;
+  }
+}
+.my_header_bg{
+  background: #25355b;
+}
+a:hover{
+  text-decoration: none;
+}

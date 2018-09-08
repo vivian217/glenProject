@@ -1,0 +1,69 @@
+<template>
+    <footer id="footer">
+        <div>
+            <div class="row my_width m-auto">
+                <div class="col-xl-3 col-sm-6 mt-4">
+                    <h3 class="pb-2">联系我们</h3>
+                    <ul class="list-unstyled mt-3">
+                        <li class="d-flex">
+                            <span class="mr-4 mt-2"></span>
+                            <span>中国重庆市渝北区松牌路145号风华美锦商务楼26楼</span>
+                        </li>
+                        <li class="d-flex">
+                            <span class="mr-4 mt-2"></span>
+                            <span>+86-23-67964368 ex 804 +8613452337836</span>
+                        </li>
+                        <li class="d-flex">
+                            <span class="mr-4 mt-1"></span>
+                            <span><a href="mailto:info@glenflange.com">info@glenflange.com</a></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-xl-3 col-sm-6 mt-4">
+                    <h3 class="pb-2">目录</h3>
+                    <ul class="list-unstyled mt-3">
+                        <li class="pb-2">&gt;&nbsp;<a href="#">管段</a></li>
+                        <li class="py-2">&gt;&nbsp;<a href="#">堆焊</a></li>
+                        <li class="py-2">&gt;&nbsp;<a href="#">订制管件</a></li>
+                        <li class="py-2">&gt;&nbsp;<a href="#">锻件</a></li>
+                        <li class="py-2">&gt;&nbsp;<a href="#">对焊件</a></li>
+                        <li class="py-2">&gt;&nbsp;<a href="#">法兰</a></li>
+                    </ul>
+                </div>
+                <div class="col-xl-3 col-sm-6 mt-4">
+                    <h3 class="pb-2">链接</h3>
+                    <a href="#" class="d-inline-block mt-3">Facebook</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+                <div class="col-xl-3 col-sm-6 mt-4">
+                    <h3 class="pb-2">二维码</h3>
+                    <img src="img/index/erwei239551.jpg" alt="" class="mt-3"/>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="my_width m-auto copyright py-3 d-flex flex-wrap">
+                <p class="px-2 m-0">版权&nbsp;&copy;&nbsp;重庆固蓝法兰有限公司所有</p>
+                <ul class="list-unstyled m-0">
+                    <li class="px-2 d-inline-block"><a href="#">产品</a></li>
+                    <li class="px-2 d-inline-block"><a href="#">质检</a></li>
+                    <li class="px-2 d-inline-block"><a href="#">工程</a></li>
+                    <li class="px-2 d-inline-block"><a href="#">项目</a></li>
+                    <li class="px-2 d-inline-block"><a href="#">文件下载</a></li>
+                    <li class="px-2 d-inline-block"><a href="#">关于我们</a></li>
+                    <li class="px-2 d-inline-block"><a href="#">联系我们</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</template>
+
+<script>
+    import "@/assets/css/footer.css"
+    export default {
+    }
+</script>
+
+<style scoped>
+
+</style>

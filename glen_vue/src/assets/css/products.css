@@ -1,0 +1,34 @@
+#section>div:last-child{
+  padding: 1rem 2rem;
+}
+#section>div:last-child>ul>li{
+  background: #eefafc;
+  margin: 1rem 0;
+  position: relative;
+}
+#section>div:last-child>ul>li>a>img{
+  width: 242px;
+  height: 242px;
+}
+#section>div:last-child>ul>li>div>h5>a{
+  color: #333;
+}
+#section>div:last-child>ul>li>div{
+  position: absolute;
+  top: 15%;
+  left: 25%;
+  width: 70%;
+  padding: 1rem;
+  background: #fff;
+  box-shadow: 5px 5px 10px #c2cfd2;
+}
+#section>div:last-child>ul>li>div>p{
+  color: #999;
+}
+#section>div:last-child>ul>li>div>a.btn{
+  background: #0c6ca3;
+  transition: all .5s ease-out;
+}
+#section>div:last-child>ul>li>div>a.btn:hover{
+  background: #192634;
+}
