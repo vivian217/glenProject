@@ -2,7 +2,7 @@
     <div>
         <h3>关于我们</h3>
         <ul>
-            <li>
+            <li @mouseenter="showSub" @mouseleave="hideSub">
                 <a href="#">产品</a>
                 <ul>
                     <li><a href="#">管段</a></li>
@@ -24,21 +24,15 @@
 <script>
     import $ from "jquery"
     export default {
+        methods:{
+            showSub(e){
+                $(e.target).children("a").addClass("active").next().addClass("active");
+            },
+            hideSub(e){
+                $(e.target).children("a").removeClass("active").next().removeClass("active");
+            }
+        }
     }
-    var $sec_list=$("div>ul>li>ul");
-    $sec_list.parent().hover(function(){
-        $(this).children("a").addClass("active")
-            .next().addClass("active");
-    },function(){
-        $(this).children("a").removeClass("active")
-            .next().removeClass("active");
-    });
-    $sec_list.on("mouseenter", "li,a", function () {
-        $(this).addClass("sec_bg");
-    });
-    $sec_list.on("mouseleave", "li,a", function () {
-        $(this).removeClass("sec_bg");
-    })
 
 </script>
 

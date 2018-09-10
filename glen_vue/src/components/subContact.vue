@@ -15,5 +15,12 @@
 </script>
 
 <style scoped>
-
+    p{
+        margin:0;
+        font-size: 0.9rem;
+        color: #333;
+    }
+    p>a{
+        color: #333;
+    }
 </style>

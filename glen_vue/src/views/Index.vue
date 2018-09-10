@@ -1,27 +1,7 @@
 <template>
     <div id="my_main">
         <!--首页轮播图-->
-        <div id="carousel" class="carousel position-relative" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active"><img src="img/index/banner1.jpg" alt=""/></div>
-                <div class="carousel-item"><img src="img/index/banner2.jpg" alt=""/></div>
-                <div class="carousel-item"><img src="img/index/banner3.jpg" alt=""/></div>
-                <div class="carousel-item"><img src="img/index/banner4.jpg" alt=""/></div>
-            </div>
-            <a href="#carousel" class="carousel-control-prev" data-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </a>
-            <a href="#carousel" class="carousel-control-next" data-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </a>
-            <!--搜索框-->
-            <form action="">
-                <div class="position-absolute my_search">
-                    <input type="text" class="h-100 w-75 border-0 bg-transparent text-white" v-model="kw" @focus="inp_focus" @blur="inp_blur"/>
-                    <button class="border-0 h-100 position-absolute"></button>
-                </div>
-            </form>
-        </div>
+        <Carousel></Carousel>
         <!--公司大致介绍-->
         <div class="row pt-5 my_width_xl" id="introduce">
             <div class="col-md-6 pr-sm-5 m-md-0 m-sm-5 mr-md-3">
@@ -42,143 +22,13 @@
                     我们已准备好为您提供高质量的服务。
                 </p>
                 <p class="font-weight-bold my-5">联系我们！我们会在30分钟内回复！</p>
-                <a href="#" class="btn px-5 py-2 text-white">更多详情</a>
+                <router-link to="/about-us" class="btn px-5 py-2 text-white">更多详情</router-link>
             </div>
         </div>
         <!--主要产品-->
-        <div id="products">
-            <div class="my_title">
-                <h3>主要产品</h3>
-                <span></span>
-            </div>
-            <div class="row m-0">
-                <div class="col-lg-3 col-sm-6 p-0 mt-1">
-                    <img src="img/index/products1.jpg" alt=""/>
-                    <div class="cover position-absolute">
-                        <div class="coverText p-2">
-                            <h3>碳钢预制件预加工制造生产线</h3>
-                            <p class="py-lg-3 py-sm-1">固蓝法兰在100000多平方米的制造车间里进行管道制造。</p>
-                            <a href="#" class="btn bg-white">更多详情</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 p-0 mt-1">
-                    <img src="img/index/products2.jpg" alt=""/>
-                    <div class="cover position-absolute">
-                        <div class="coverText p-2">
-                            <h3>订制不锈钢管制造和线轴</h3>
-                            <p class="py-lg-3 py-sm-1">我们的工作人员对所有材料都是经验丰富的管道制造商</p>
-                            <a href="#" class="btn bg-white">更多详情</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 p-0 mt-1">
-                    <img src="img/index/products3.jpg" alt=""/>
-                    <div class="cover position-absolute">
-                        <div class="coverText p-2">
-                            <h3>堆焊管件和焊接熔覆工艺</h3>
-                            <p class="py-lg-3 py-sm-1">固蓝法兰是中国特种焊接工程公司，提供防腐焊缝覆盖层管配件</p>
-                            <a href="#" class="btn bg-white">更多详情</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 p-0 mt-1">
-                    <img src="img/index/products4.jpg" alt=""/>
-                    <div class="cover position-absolute">
-                        <div class="coverText p-2">
-                            <h3>开模管锻件，锻压轴</h3>
-                            <p class="py-lg-3 py-sm-1">材料和重量生产方法：封闭模具、挤出、开模公差（+/-）：0.3-0.5毫米（半成品）</p>
-                            <a href="#" class="btn bg-white">更多详情</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row m-0">
-                <div class="col-lg-3 col-sm-6 mt-1 p-0">
-                    <img src="img/index/products5.jpg" alt=""/>
-                    <div class="cover position-absolute">
-                        <div class="coverText p-2">
-                            <h3>特大型锚、管箍、大小头、旋转接头、方管法兰</h3>
-                            <p class="py-lg-3 py-sm-1">无论何时，当您需要专门的定制法兰，高合金，低温，高强度的，都可以联系我们。</p>
-                            <a href="#" class="btn bg-white">更多详情</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 mt-1 p-0">
-                    <img src="img/index/products6.jpg" alt=""/>
-                    <div class="cover position-absolute">
-                        <div class="coverText p-2">
-                            <h3>ASME B16.47系列法兰</h3>
-                            <p class="py-lg-3 py-sm-1">自2006年以来，固蓝法兰为广泛的行业提供了最高质量的锻件法兰</p>
-                            <a href="#" class="btn bg-white">更多详情</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 mt-1 p-0">
-                    <img src="img/index/products7.jpg" alt=""/>
-                    <div class="cover position-absolute">
-                        <div class="coverText p-2">
-                            <h3>双相钢2205/2507/31803不锈钢管配件，对焊弯头无缝或焊缝45/90/180°。短/长半径，ABS证书</h3>
-                            <p class="py-lg-3 py-sm-1">无论何时，当您需要专门的定制法兰，高合金，低温，高强度的，都可以联系我们。</p>
-                            <a href="#" class="btn bg-white">更多详情</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 mt-1 p-0">
-                    <img src="img/index/products8.jpg" alt=""/>
-                    <div class="cover position-absolute">
-                        <div class="coverText p-2">
-                            <h3>定制专业焊接非标准船舶、船舶管件</h3>
-                            <p class="py-lg-3 py-sm-1">无论何时当你需要专业的定制管道配件，装配式三通，径向流三通（特殊流三通），三通，大小头等，我们都可以为您提供</p>
-                            <a href="#" class="btn bg-white">更多详情</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <Products></Products>
         <!--热门产品-->
-        <div id="hot_products">
-            <div class="my_title">
-                <h3>热门产品</h3>
-                <span></span>
-            </div>
-            <div class="my_width_xl">
-                <div class="row">
-                    <div class="col-md-3 col-sm-6 p-2">
-                        <div class="card border-0">
-                            <a href="#"><img src="img/index/hot_product1.jpg" alt=""/></a>
-                            <div class="card-body text-center">
-                                <a href="#" class="text-secondary">BS4504 10/3盲板锻造合金钢法兰，适用于造船</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 p-2">
-                        <div class="card border-0">
-                            <a href="#"><img src="img/index/hot_product2.jpg" alt=""/></a>
-                            <div class="card-body text-center">
-                                <a href="#" class="text-secondary">ASME B16.9对焊等径三通，双相钢/不锈钢/铜镍钛合金/合金钢</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 p-2">
-                        <div class="card border-0">
-                            <a href="#"><img src="img/index/hot_product3.jpg" alt=""/></a>
-                            <div class="card-body text-center">
-                                <a href="#" class="text-secondary">铜镍对焊弯头；Cu-Ni 90/10无缝或焊接45/90/180度；短/长半径弯头</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 p-2">
-                        <div class="card border-0">
-                            <a href="#"><img src="img/index/hot_product4.jpg" alt=""/></a>
-                            <div class="card-body text-center">
-                                <a href="#" class="text-secondary">ANSI B16.9对焊翻边，搭接接头，适用于造船工业</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <HotPro></HotPro>
         <!--新闻部分：设备和质检-->
         <div id="my_news" class="pb-5">
             <div class="news_bg"></div>
@@ -261,7 +111,7 @@
                     </li>
                 </ul>
                 <div class="text-center py-3">
-                    <a href="#" class="btn text-white px-5 py-2">更多信息</a>
+                    <router-link to="/equipment" class="btn text-white px-5 py-2">更多信息</router-link>
                 </div>
             </div>
         </div>
@@ -291,24 +141,26 @@
 </template>
 
 <script>
+    import Carousel from '@/components/index/Carousel.vue'
+    import Products from '@/components/index/Products.vue'
+    import HotPro from '@/components/index/HotPro.vue'
     import "@/assets/css/index.css"
     import $ from "jquery"
-    import Vue from "vue"
     export default {
+        components:{
+            Carousel,
+            Products,
+            HotPro
+        },
         data(){
             return{
-                kw:"请输入搜索产品...",
-                email:"",
-                carousel:[]
+                email:""
             }
         },
+        created(){
+
+        },
         methods:{
-            inp_focus(){
-                if(this.kw=="请输入搜索产品...")this.kw="";
-            },
-            inp_blur(){
-                if(this.kw=="")this.kw="请输入搜索产品...";
-            },
             email_check(){
                 var reg=/^[a-z0-9]+@[a-z0-9]+\.com(\.[a-z]+)?$/i;
                 if(reg.test(this.email)){
@@ -322,5 +174,7 @@
 </script>
 
 <style scoped>
-
+    [v-cloak]{
+        display: none;
+    }
 </style>

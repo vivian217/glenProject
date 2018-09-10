@@ -4,7 +4,7 @@
     <section id="section" class="clearfix">
       <div>
         <router-link to="/">主页</router-link>
-        <span>&gt;&nbsp;工程师提示</span>
+        <span>&gt;&nbsp;行业知识</span>
       </div>
       <div>
         <SubNav1></SubNav1>
@@ -90,9 +90,6 @@
 </template>
 
 <script>
-  import "@/assets/css/my_boot.css"
-  import "@/assets/css/my_boot_part3.css"
-  import "@/assets/css/et_eq.css"
   import Banner from '@/components/banner.vue'
   import SubNav1 from '@/components/subnav1.vue'
   import Contact from '@/components/subContact.vue'
@@ -104,3 +101,33 @@
       }
   }
 </script>
+<style scoped>
+    #section>div:last-child>div:first-child{
+        background:#eefafc;
+    }
+    #section>div:last-child>div:first-child{
+        padding: 1rem 2rem;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    #section>div:last-child>div:first-child+div{
+        margin: 1rem 2rem;
+    }
+    #section>div:last-child>ul>li{
+        position: relative;
+        border-bottom: 1px dashed #999;
+        padding: 0.5rem 0;
+        margin: 0 0.5rem;
+    }
+    #section>div:last-child>ul>li>a{
+        color: #999;
+    }
+    #section>div:last-child>ul>li>a:hover{
+        color: #333;
+    }
+    #section>div:last-child>ul>li>a>span:last-child{
+        position: absolute;
+        right: 0;
+        font-size: 0.8rem;
+    }
+</style>

@@ -19,8 +19,8 @@
               <li class="dropdown-item px-md-2"><a href="#">法兰</a></li>
             </ul>
           </li>
-          <li class="nav-item py-md-4"><router-link to="/equipment" class="nav-link py-0 px-3 text-white my_font">质检</router-link></li>
-          <li class="nav-item py-md-4"><router-link to="/engineer-tips" class="nav-link py-0 px-3 text-white my_font">工程</router-link></li>
+          <li class="nav-item py-md-4"><router-link to="/newslist" class="nav-link py-0 px-3 text-white my_font">新闻</router-link></li>
+          <li class="nav-item py-md-4"><router-link to="/engineer-tips" class="nav-link py-0 px-3 text-white my_font">分享</router-link></li>
           <li class="nav-item py-md-4"><router-link to="/latest-project" class="nav-link py-0 px-3 text-white my_font">项目</router-link></li>
           <li class="nav-item py-md-4"><router-link to="/download" class="nav-link py-0 px-3 text-white my_font">文件下载</router-link></li>
           <li class="nav-item py-md-4 hidden_md"><router-link to="/about-us" class="nav-link py-0 px-3 text-white my_font">关于我们</router-link></li>

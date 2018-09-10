@@ -8,7 +8,7 @@ import ContactUs from './views/ContactUs'
 import Downloads from './views/Downloads'
 import LatestPro from './views/LatestPro'
 import EngineerTips from './views/EngineerTips'
-import EquipmentQC from './views/EquipmentQC'
+import Newlist from './views/NewList'
 import Products from './views/Products'
 
 Vue.use(Router)
@@ -24,7 +24,7 @@ export default new Router({
             {path:'/download',component:Downloads},
             {path:'/latest-project',component:LatestPro},
             {path:'/engineer-tips',component:EngineerTips},
-            {path:'/equipment',component:EquipmentQC},
+            {path:'/newslist',component:Newlist},
             {path:'/products',component:Products}
     ]},
     { path: '/*', component:NotFound }

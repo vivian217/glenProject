@@ -54,12 +54,10 @@
 </template>
 
 <script>
-  import "@/assets/css/my_boot.css"
-  import "@/assets/css/my_boot_part3.css"
-  import "@/assets/css/contact_us.css"
   import Banner from '@/components/banner.vue'
   import SubNav2 from '@/components/subnav2.vue'
   import Contact from '@/components/subContact.vue'
+
   export default {
       components:{
           Banner,
@@ -68,4 +66,53 @@
       }
   }
 </script>
-
+<style scoped>
+    #section>div:last-child{
+        border: 1px solid #e0f6f9;
+    }
+    #section>div:last-child>div:first-child{
+        background:#eefafc;
+    }
+    #section>div:last-child>div:first-child{
+        padding: 1rem 2rem;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    #section>div:last-child>div:first-child+div{
+        margin: 1rem 2rem;
+    }
+    @media screen and (min-width:768px ){
+        table{
+            width: 600px;
+            margin: auto;
+        }
+    }
+    @media screen and (max-width:767px ){
+        table{
+            width: 100%;
+        }
+    }
+    #section>div:last-child table tr>td:first-child{
+        text-align: right;
+    }
+    #section>div:last-child table tr>td>input,textarea,table>tbody>tr>td>div{
+        margin-top: 1rem;
+        width: 80%;
+    }
+    #section>div:last-child table tr:last-child{
+        text-align: center;
+    }
+    #section>div:last-child textarea{
+        height: 100px;
+        resize: none;
+    }
+    #section>div:last-child table tr>td>span{
+        color: red;
+    }
+    #section>div:last-child #sent{
+        padding: 0.2rem 2rem;
+        color: #fff;
+        background: #ff9c00;
+        border: none;
+    }
+</style>

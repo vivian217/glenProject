@@ -127,8 +127,6 @@
 </template>
 
 <script>
-  import "@/assets/css/my_boot.css"
-  import "@/assets/css/products.css"
   import Banner from '@/components/banner.vue'
   import SubNav1 from '@/components/subnav1.vue'
   import Contact from '@/components/subContact.vue'
@@ -140,3 +138,40 @@
       }
   }
 </script>
+<style scoped>
+    #section>div:last-child{
+        padding: 1rem 2rem;
+        border: 1px solid #e0f6f9;
+    }
+    #section>div:last-child>ul>li{
+        background: #eefafc;
+        margin: 1rem 0;
+        position: relative;
+    }
+    #section>div:last-child>ul>li>a>img{
+        width: 242px;
+        height: 242px;
+    }
+    #section>div:last-child>ul>li>div>h5>a{
+        color: #333;
+    }
+    #section>div:last-child>ul>li>div{
+        position: absolute;
+        top: 15%;
+        left: 25%;
+        width: 70%;
+        padding: 1rem;
+        background: #fff;
+        box-shadow: 5px 5px 10px #c2cfd2;
+    }
+    #section>div:last-child>ul>li>div>p{
+        color: #999;
+    }
+    #section>div:last-child>ul>li>div>a.btn{
+        background: #0c6ca3;
+        transition: all .5s ease-out;
+    }
+    #section>div:last-child>ul>li>div>a.btn:hover{
+        background: #192634;
+    }
+</style>

@@ -6,7 +6,7 @@
             <li><a href="#">焊接覆盖层</a></li>
             <li><a href="#">订制法兰管件</a></li>
             <li><a href="#">锻件</a></li>
-            <li>
+            <li @mouseenter="showSub" @mouseleave="hideSub">
                 <a href="#">焊接管件</a>
                 <ul>
                     <li><a href="#">对焊弯头</a></li>
@@ -16,7 +16,7 @@
                     <li><a href="#">对焊管端</a></li>
                 </ul>
             </li>
-            <li>
+            <li @mouseenter="showSub" @mouseleave="hideSub">
                 <a href="#">法兰</a>
                 <ul>
                     <li><a href="#">ANSI B16.5 法兰 (ASME, ASA)</a></li>
@@ -37,21 +37,15 @@
 <script>
     import $ from "jquery"
     export default {
+        methods:{
+            showSub(e){
+                $(e.target).children("a").addClass("active").next().addClass("active");
+            },
+            hideSub(e){
+                $(e.target).children("a").removeClass("active").next().removeClass("active");
+            }
+        }
     }
-    var $sec_list=$("div>ul>li>ul");
-    $sec_list.parent().hover(function(){
-        $(this).children("a").addClass("active")
-            .next().addClass("active");
-    },function(){
-        $(this).children("a").removeClass("active")
-            .next().removeClass("active");
-    })
-    $sec_list.on("mouseenter", "li,a", function () {
-        $(this).addClass("sec_bg");
-    })
-    $sec_list.on("mouseleave", "li,a", function () {
-        $(this).removeClass("sec_bg");
-    })
 </script>
 
 <style scoped>

@@ -44,11 +44,10 @@
 </template>
 
 <script>
-  import "@/assets/css/my_boot.css"
-  import "@/assets/css/my_boot_part3.css"
   import Banner from '@/components/banner.vue'
   import SubNav2 from '@/components/subnav2.vue'
   import Contact from '@/components/subContact.vue'
+
   export default {
       components:{
           Banner,
@@ -57,3 +56,19 @@
       }
   }
 </script>
+<style scoped>
+    #section>div:last-child{
+        border: 1px solid #e0f6f9;
+    }
+    #section>div:last-child>div:first-child{
+        background:#eefafc;
+    }
+    #section>div:last-child>div:first-child{
+        padding: 1rem 2rem;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    #section>div:last-child>div:first-child+div{
+        margin: 1rem 2rem;
+    }
+</style>
