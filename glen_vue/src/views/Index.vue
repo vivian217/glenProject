@@ -6,7 +6,7 @@
         <div class="row pt-5 my_width_xl" id="introduce">
             <div class="col-md-6 pr-sm-5 m-md-0 m-sm-5 mr-md-3">
                 <div class="my_img m-auto">
-                    <img src="img/index/glen_employee.jpg" alt="" class="img-fluid"/>
+                    <img src="/img/index/glen_employee.jpg" alt="" class="img-fluid"/>
                 </div>
             </div>
             <div class="col-md-5 m-md-0 m-sm-5 ml-md-3">
@@ -111,7 +111,7 @@
                     </li>
                 </ul>
                 <div class="text-center py-3">
-                    <router-link to="/equipment" class="btn text-white px-5 py-2">更多信息</router-link>
+                    <router-link to="/news" class="btn text-white px-5 py-2">更多信息</router-link>
                 </div>
             </div>
         </div>

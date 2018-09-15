@@ -32,7 +32,7 @@
         },
         methods:{
             getCarousel(){
-                this.$ajax.get("http://localhost:6060/index").then(res=>{
+                this.$axios.get("http://localhost:6060/index").then(res=>{
                     if(res.data.code==1){
                         this.carousel=res.data.msg;
                     }

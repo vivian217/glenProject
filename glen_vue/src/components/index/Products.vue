@@ -41,7 +41,7 @@
         created(){this.getProducts()},
         methods:{
             getProducts(){
-                this.$ajax.get("http://localhost:6060/index/products").then(res=>{
+                this.$axios.get("http://localhost:6060/index/products").then(res=>{
                     if(res.data.code==1){
                         this.products=res.data.msg;
                     }

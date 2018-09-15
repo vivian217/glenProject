@@ -141,7 +141,6 @@
 <style scoped>
     #section>div:last-child{
         padding: 1rem 2rem;
-        border: 1px solid #e0f6f9;
     }
     #section>div:last-child>ul>li{
         background: #eefafc;

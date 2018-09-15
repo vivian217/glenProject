@@ -16,43 +16,43 @@
           <p>
             <span>固蓝管道系统介绍</span>
             <a href="documents/1-GLEN-Piping-system-introduction.pdf">
-              <img src="img/index/pdf.png" alt="固蓝管道系统介绍" title="固蓝管道系统介绍"/>
+              <img src="/img/index/pdf.png" alt="固蓝管道系统介绍" title="固蓝管道系统介绍"/>
             </a>
           </p>
           <p>
             <span>固蓝管道配件介绍</span>
             <a href="documents/2-GLEN-Piping-fitting-introduction.pdf">
-              <img src="img/index/pdf.png" alt="固蓝管道配件介绍" title="固蓝管道配件介绍"/>
+              <img src="/img/index/pdf.png" alt="固蓝管道配件介绍" title="固蓝管道配件介绍"/>
             </a>
           </p>
           <p>
             <span>固蓝焊缝层介绍</span>
             <a href="documents/3-GLEN-Weld-overlay-introduction.pdf">
-              <img src="img/index/pdf.png" alt="固蓝焊缝层介绍" title="固蓝焊缝层介绍"/>
+              <img src="/img/index/pdf.png" alt="固蓝焊缝层介绍" title="固蓝焊缝层介绍"/>
             </a>
           </p>
           <p>
             <span>固蓝锻钢法兰介绍</span>
             <a href="documents/4-GLEN-Forging-steel-Flange-introduction.pdf">
-              <img src="img/index/pdf.png" alt="固蓝锻钢法兰介绍" title="固蓝锻钢法兰介绍"/>
+              <img src="/img/index/pdf.png" alt="固蓝锻钢法兰介绍" title="固蓝锻钢法兰介绍"/>
             </a>
           </p>
           <p>
             <span>固蓝切割法兰应用</span>
             <a href="documents/5-GLEN-Cutting-flange-application.pdf">
-              <img src="img/index/pdf.png" alt="固蓝切割法兰应用" title="固蓝切割法兰应用"/>
+              <img src="/img/index/pdf.png" alt="固蓝切割法兰应用" title="固蓝切割法兰应用"/>
             </a>
           </p>
           <p>
             <span>固蓝双相钢介绍</span>
             <a href="documents/6-GLEN-Duplex-stainless-Steel-introduction.pdf">
-              <img src="img/index/pdf.png" alt="固蓝双相钢介绍" title="固蓝双相钢介绍"/>
+              <img src="/img/index/pdf.png" alt="固蓝双相钢介绍" title="固蓝双相钢介绍"/>
             </a>
           </p>
           <p>
             <span>ASME B16.5-2009</span>
             <a href="documents/ASME.pdf">
-              <img src="img/index/pdf.png" alt="ASME B16.5-2009" title="ASME B16.5-2009"/>
+              <img src="/img/index/pdf.png" alt="ASME B16.5-2009" title="ASME B16.5-2009"/>
             </a>
           </p>
         </div>
@@ -75,9 +75,6 @@
   }
 </script>
 <style scoped>
-    #section>div:last-child{
-        border: 1px solid #e0f6f9;
-    }
     #section>div:last-child>div:first-child{
         background:#eefafc;
     }

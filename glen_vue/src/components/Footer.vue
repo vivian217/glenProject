@@ -37,7 +37,7 @@
                 </div>
                 <div class="col-xl-3 col-sm-6 mt-4">
                     <h3 class="pb-2">二维码</h3>
-                    <img src="img/index/erwei239551.jpg" alt="" class="mt-3"/>
+                    <img src="/img/index/erwei239551.jpg" alt="" class="mt-3"/>
                 </div>
             </div>
         </div>

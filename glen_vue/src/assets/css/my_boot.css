@@ -2,6 +2,16 @@
   width: 1200px;
   margin: 0 auto;
 }
+.sec_bg{
+    background:#eefafc;
+}
+#section>div:first-child{
+    background:#eefafc;
+}
+#section>div:not(:last-child){
+    border: 1px solid #e0f6f9;
+    float: left;
+}
 #section>div:nth-child(2){
   padding: 1rem;
   width: 20%;
@@ -11,6 +21,7 @@
   float: right;
   width: 79%;
   margin-bottom: 0.5rem;
+  border: 1px solid #e0f6f9;
 }
 @media screen and (max-width: 1200px){
   #section{
@@ -25,16 +36,7 @@
     width: 100%;
   }
 }
-.sec_bg{
-  background:#eefafc;
-}
-#section>div:first-child{
-  background:#eefafc;
-}
-#section>div:not(:last-child){
-  border: 1px solid #e0f6f9;
-  float: left;
-}
+
 /*导航卡样式*/
 #section>div:first-child{
   width: 100%;

@@ -86,7 +86,7 @@ a.btn{
   background: #7bd9e7;
 }
 /*主体部分图片样式*/
-div.row img{
+#my_main div.row img{
   width: 100%;
   height: 100%;
 }

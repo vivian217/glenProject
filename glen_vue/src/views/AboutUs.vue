@@ -18,7 +18,7 @@
           <p>帮助客户更强是我们的使命。</p>
           <hr/>
           <h4>公司环境</h4>
-          <img src="img/aboutus/office.jpg" alt=""/>
+          <img src="/img/aboutus/office.jpg" alt=""/>
           <p>
             员工：11人 <br/>
             国际销售部：4人 <br/>
@@ -32,14 +32,14 @@
           </p>
 
           <div>
-            <img src="img/aboutus/engineer.jpg" alt=""/>
+            <img src="/img/aboutus/engineer.jpg" alt=""/>
             <p>电话:+86-23-67964368-806</p>
             <p>传真: +86-23-67504207</p>
             <p>电子邮箱:engineer@glenflange.com</p>
             <p>让图纸说话</p>
           </div>
           <div>
-            <img src="img/aboutus/engineer2.jpg" alt=""/>
+            <img src="/img/aboutus/engineer2.jpg" alt=""/>
             <p>电话:+86-23-67964368-806</p>
             <p>传真: +86-23-67504207</p>
             <p>电子邮箱:engineer@glenflange.com</p>
@@ -47,7 +47,7 @@
           </div>
           <hr/>
           <h4>产品证书</h4>
-          <img src="img/aboutus/certificate.jpg" alt=""/>
+          <img src="/img/aboutus/certificate.jpg" alt=""/>
         </div>
       </div>
     </section>
@@ -69,9 +69,6 @@
   }
 </script>
 <style scoped>
-    #section>div:last-child{
-        border: 1px solid #e0f6f9;
-    }
     #section>div:last-child>div:first-child{
         background:#eefafc;
     }

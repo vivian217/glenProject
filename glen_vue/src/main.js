@@ -10,7 +10,7 @@ import "@/assets/css/bootstrap.css"
 import "@/assets/css/base.css"
 
 axios.defaults.withCredentials=true;
-Vue.prototype.$ajax=axios;
+Vue.prototype.$axios=axios;
 Vue.config.productionTip = false;
 
 new Vue({

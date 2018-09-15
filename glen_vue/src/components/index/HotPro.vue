@@ -29,7 +29,7 @@
         created(){this.getHotPro()},
         methods:{
             getHotPro(){
-                this.$ajax.get("http://localhost:6060/index/hotPro").then(res=>{
+                this.$axios.get("http://localhost:6060/index/hotPro").then(res=>{
                     if(res.data.code==1){
                         this.hotPro=res.data.msg;
                     }

@@ -57,9 +57,6 @@
   }
 </script>
 <style scoped>
-    #section>div:last-child{
-        border: 1px solid #e0f6f9;
-    }
     #section>div:last-child>div:first-child{
         background:#eefafc;
     }
