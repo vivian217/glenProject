@@ -9,14 +9,14 @@ router.get("/",(req,res)=>{
     })
 });
 router.get("/products",(req,res)=>{
-    var sql="SELECT id,title,details,img,alt FROM glen_index_products";
+    var sql="SELECT id,title,details,img,alt,href FROM glen_index_products";
     pool.query(sql,(err,result)=>{
         if(err)throw err;
         res.send({code:1,msg:result});
     })
 });
 router.get("/hotPro",(req,res)=>{
-    var sql="SELECT id,title,img,alt FROM glen_index_hotpro";
+    var sql="SELECT id,title,img,alt,href FROM glen_index_hotpro";
     pool.query(sql,(err,result)=>{
         if(err)throw err;
         res.send({code:1,msg:result});

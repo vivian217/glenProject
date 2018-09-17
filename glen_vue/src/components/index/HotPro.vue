@@ -8,9 +8,9 @@
             <div class="row">
                 <div class="col-md-3 col-sm-6 p-2" v-for="item in hotPro" :key="item.id">
                     <div class="card border-0">
-                        <a href="#"><img :src="item.img" alt=""/></a>
+                        <router-link :to="item.href"><img :src="item.img" alt=""/></router-link>
                         <div class="card-body text-center">
-                            <a href="#" class="text-secondary" v-cloak>{{item.title}}</a>
+                            <router-link :to="item.href" class="text-secondary" v-cloak>{{item.title}}</router-link>
                         </div>
                     </div>
                 </div>

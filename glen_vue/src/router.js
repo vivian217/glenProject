@@ -27,8 +27,16 @@ export default new Router({
             {path:'info',component:Info},
             {path:'news',component:News},
             {path:'products',component:Products},
-            {path:'products/detail',component:ProductDetail, props:true}
+            {path:'products/:fid',component:Products, props:true},
+            {path:'products/detail/:pid',component:ProductDetail, props:true}
     ]},
     { path: '/*', component:NotFound }
-  ]
+  ],
+  scrollBehavior (to, from, savedPosition) {
+      if (savedPosition) {
+          return savedPosition
+      } else {
+          return {x: 0, y: 0}
+      }
+  }
 })

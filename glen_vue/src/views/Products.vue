@@ -13,112 +13,23 @@
       <div>
         <h2>产品</h2>
         <ul>
-          <li>
-            <a href="#"><img src="img/products/p201706121700183991603.jpg" alt=""/></a>
+          <li v-for="item in data" :key="item.pid">
+            <router-link :to="'products/detail/'+item.pid"><img :src="item.pic" alt=""/></router-link>
             <div>
-              <h5><a href="#">碳钢管线制造预制件生产线</a></h5>
-              <p>固蓝法兰在我们的100000多平方米的制造车间里进行管道制造。</p>
-              <a href="#" class="btn text-white py-0">更多详情</a>
-            </div>
-          </li>
-          <li>
-            <a href="#"><img src="img/products/p201706131509456892017.jpg" alt=""/></a>
-            <div>
-              <h5><a href="#">碳钢管线制造预制件生产线</a></h5>
-              <p>固蓝法兰在我们的100000多平方米的制造车间里进行管道制造。</p>
-              <a href="#" class="btn text-white py-0">更多详情</a>
-            </div>
-          </li>
-          <li>
-            <a href="#"><img src="img/products/p201706131502226939677.jpg" alt=""/></a>
-            <div>
-              <h5><a href="#">碳钢管线制造预制件生产线</a></h5>
-              <p>固蓝法兰在我们的100000多平方米的制造车间里进行管道制造。</p>
-              <a href="#" class="btn text-white py-0">更多详情</a>
-            </div>
-          </li>
-          <li>
-            <a href="#"><img src="img/products/p201706121701217116530.jpg" alt=""/></a>
-            <div>
-              <h5><a href="#">碳钢管线制造预制件生产线</a></h5>
-              <p>固蓝法兰在我们的100000多平方米的制造车间里进行管道制造。</p>
-              <a href="#" class="btn text-white py-0">更多详情</a>
-            </div>
-          </li>
-          <li>
-            <a href="#"><img src="img/products/p201706121701344460283.jpg" alt=""/></a>
-            <div>
-              <h5><a href="#">碳钢管线制造预制件生产线</a></h5>
-              <p>固蓝法兰在我们的100000多平方米的制造车间里进行管道制造。</p>
-              <a href="#" class="btn text-white py-0">更多详情</a>
-            </div>
-          </li>
-          <li>
-            <a href="#"><img src="img/products/p201706151319227673771.jpg" alt=""/></a>
-            <div>
-              <h5><a href="#">碳钢管线制造预制件生产线</a></h5>
-              <p>固蓝法兰在我们的100000多平方米的制造车间里进行管道制造。</p>
-              <a href="#" class="btn text-white py-0">更多详情</a>
-            </div>
-          </li>
-          <li>
-            <a href="#"><img src="img/products/p201706121702010242297.jpg" alt=""/></a>
-            <div>
-              <h5><a href="#">碳钢管线制造预制件生产线</a></h5>
-              <p>固蓝法兰在我们的100000多平方米的制造车间里进行管道制造。</p>
-              <a href="#" class="btn text-white py-0">更多详情</a>
-            </div>
-          </li>
-          <li>
-            <a href="#"><img src="img/products/p201706121702129304057.jpg" alt=""/></a>
-            <div>
-              <h5><a href="#">碳钢管线制造预制件生产线</a></h5>
-              <p>固蓝法兰在我们的100000多平方米的制造车间里进行管道制造。</p>
-              <a href="#" class="btn text-white py-0">更多详情</a>
-            </div>
-          </li>
-          <li>
-            <a href="#"><img src="img/products/duplex-pipe-spool-fabrication-drawings-and56198636581.jpg" alt=""/></a>
-            <div>
-              <h5><a href="#">碳钢管线制造预制件生产线</a></h5>
-              <p>固蓝法兰在我们的100000多平方米的制造车间里进行管道制造。</p>
-              <a href="#" class="btn text-white py-0">更多详情</a>
-            </div>
-          </li>
-          <li>
-            <a href="#"><img src="img/products/stainless-steel-cap-316-30423102805490.jpg" alt=""/></a>
-            <div>
-              <h5><a href="#">碳钢管线制造预制件生产线</a></h5>
-              <p>固蓝法兰在我们的100000多平方米的制造车间里进行管道制造。</p>
-              <a href="#" class="btn text-white py-0">更多详情</a>
-            </div>
-          </li>
-          <li>
-            <a href="#"><img src="img/products/large-size-con-concentrate-welding-reducer08306159063.jpg" alt=""/></a>
-            <div>
-              <h5><a href="#">碳钢管线制造预制件生产线</a></h5>
-              <p>固蓝法兰在我们的100000多平方米的制造车间里进行管道制造。</p>
-              <a href="#" class="btn text-white py-0">更多详情</a>
-            </div>
-          </li>
-          <li>
-            <a href="#"><img src="img/products/large-size-pipe-reducting-tee-abs-certficated04017413081.jpg" alt=""/></a>
-            <div>
-              <h5><a href="#">碳钢管线制造预制件生产线</a></h5>
-              <p>固蓝法兰在我们的100000多平方米的制造车间里进行管道制造。</p>
-              <a href="#" class="btn text-white py-0">更多详情</a>
+              <h5><router-link :to="'products/detail/'+item.pid">{{item.title}}</router-link></h5>
+              <p>{{item.subtitle.substring(0,50)+"..."}}</p>
+              <router-link :to="'products/detail/'+item.pid" class="btn text-white py-0">更多详情</router-link>
             </div>
           </li>
         </ul>
         <div class="pages mt-5">
           <ul class="pagination justify-content-center">
-            <li class="page-item disabled"><a href="#" class="page-link">首页</a></li>
-            <li class="page-item disabled"><a href="#" class="page-link">上一页</a></li>
-            <li class="page-item active"><a href="#" class="page-link">1</a></li>
-            <li class="page-item"><a href="#" class="page-link">2</a></li>
-            <li class="page-item"><a href="#" class="page-link">下一页</a></li>
-            <li class="page-item"><a href="#" class="page-link">末页</a></li>
-            <li class="page-item disabled"><a href="#" class="page-link border-top-0 border-right-0 border-bottom-0">1/2</a></li>
+            <li class="page-item"><a href="#" class="page-link" @click.prevent="reloadPage(1)">首页</a></li>
+            <li class="page-item"><a href="#" class="page-link" @click.prevent="reloadPage(pno-1)">上一页</a></li>
+            <li class="page-item " v-for="i in pageCount" :class="i==pno?'active':''"><a to="#" class="page-link" @click.prevent="reloadPage(i)">{{i}}</a></li>
+            <li class="page-item"><a href="#" class="page-link" @click.prevent="reloadPage(parseInt(pno)+1)">下一页</a></li>
+            <li class="page-item"><a href="#" class="page-link" @click.prevent="reloadPage(pageCount)">末页</a></li>
+            <li class="page-item disabled"><a href="#" class="page-link border-top-0 border-right-0 border-bottom-0">1/{{pageCount}}</a></li>
           </ul>
         </div>
       </div>
@@ -130,11 +41,50 @@
   import Banner from '@/components/banner.vue'
   import SubNav1 from '@/components/subnav1.vue'
   import Contact from '@/components/subContact.vue'
+  import $ from "jquery"
   export default {
       components:{
           Banner,
           SubNav1,
           Contact
+      },
+      data(){
+          return {
+              fid:this.$route.params.fid,
+              count:"",
+              pSize:"",
+              pageCount:"",
+              pno:"",
+              data:[]
+          }
+      },
+      created(){},
+      mounted(){
+        this.loadPage();
+      },
+      methods:{
+          loadPage(pno=1){
+              this.$axios.get("http://localhost:6060/pro?pno="+pno).then(res=>{
+                  var {count,pSize,pageCount,pno,data}=res.data;
+                  this.data=data;
+                  this.pno=pno;
+                  this.pageCount=pageCount;
+                  if(this.pno==1){
+                      $(".pages>ul").children(":lt(2)").addClass("disabled");
+                  }else{
+                      $(".pages>ul").children(":lt(2)").removeClass("disabled");
+                  }
+                  if(this.pno==this.pageCount){
+                      $(".pages>ul").children(":gt("+(this.pageCount+1)+")").addClass("disabled");
+                  }else{
+                      $(".pages>ul").children(":gt("+(this.pageCount+1)+")").removeClass("disabled");
+                  }
+              })
+          },
+          reloadPage(pno){
+              this.loadPage(pno);
+              console.log(pno);
+          }
       }
   }
 </script>
@@ -172,5 +122,13 @@
     }
     #section>div:last-child>ul>li>div>a.btn:hover{
         background: #192634;
+    }
+    #section>div:last-child>div.pages .page-item .page-link{
+        color: #666;
+    }
+    #section>div:last-child>div.pages .page-item.active .page-link{
+        background-color: #0c6ca3;
+        border-color: transparent;
+        color: #fff;
     }
 </style>

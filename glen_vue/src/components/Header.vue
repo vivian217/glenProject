@@ -11,7 +11,7 @@
           <li class="nav-item py-md-4 dropdown" id="product">
             <router-link to="/products" class="nav-link py-0 px-3 text-white my_font">产品</router-link>
             <ul class="dropdown-menu my_product my_header_bg m-0 p-0">
-              <li class="dropdown-item px-md-2"><a href="#">管段</a></li>
+              <li class="dropdown-item px-md-2"><router-link to="products/1">管段</router-link></li>
               <li class="dropdown-item px-md-2"><a href="#">堆焊</a></li>
               <li class="dropdown-item px-md-2"><a href="#">订制管件</a></li>
               <li class="dropdown-item px-md-2"><a href="#">锻件</a></li>

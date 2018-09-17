@@ -11,7 +11,7 @@
                     <div class="coverText p-2">
                         <h3 v-cloak>{{item.title}}</h3>
                         <p class="py-lg-3 py-sm-1" v-cloak>{{item.details}}</p>
-                        <a href="#" class="btn bg-white">更多详情</a>
+                        <router-link :to="item.href" class="btn bg-white">更多详情</router-link>
                     </div>
                 </div>
             </div>
@@ -23,7 +23,7 @@
                     <div class="coverText p-2">
                         <h3 v-cloak>{{item.title}}</h3>
                         <p class="py-lg-3 py-sm-1" v-cloak>{{item.details}}</p>
-                        <a href="#" class="btn bg-white">更多详情</a>
+                        <router-link :to="item.href" class="btn bg-white">更多详情</router-link>
                     </div>
                 </div>
             </div>

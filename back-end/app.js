@@ -6,6 +6,7 @@ app.listen(6060);
 //引入路由
 var index=require("./routes/index");
 var prodetail=require("./routes/prodetail");
+var products=require("./routes/products");
 app.use(cors({
   origin:['http://127.0.0.1:8080', 'http://localhost:8080'],
   credentials:true
@@ -15,3 +16,4 @@ app.use(express.static("../myproject"));
 //挂载路由
 app.use("/index",index);
 app.use("/prodetail",prodetail);
+app.use("/pro",products);

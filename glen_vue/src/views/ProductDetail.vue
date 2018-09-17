@@ -62,11 +62,12 @@
       },
       data(){
           return {
-              pid:22,
+              pid:this.$route.params.pid,
               pics:[{id:"",pic:""}],
               specs:[{pid:"",title:"",subtitle:"",details:""}]
           }
       },
+      created(){},
       mounted(){
           this.$axios.get("http://localhost:6060/prodetail?pid="+this.pid).then(res=>{
             var {pics,specs}=res.data;
@@ -142,7 +143,6 @@
 
       },
       methods:{
-
       }
   }
 </script>
