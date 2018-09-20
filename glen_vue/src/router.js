@@ -11,6 +11,7 @@ import Info from './views/Info'
 import News from './views/News'
 import Products from './views/Products'
 import ProductDetail from './views/ProductDetail'
+import NewsInfoDetail from './views/newsInfoDetail'
 
 Vue.use(Router)
 
@@ -27,8 +28,11 @@ export default new Router({
             {path:'info',component:Info},
             {path:'news',component:News},
             {path:'products',component:Products},
-            {path:'products/:fid',component:Products, props:true},
-            {path:'products/detail/:pid',component:ProductDetail, props:true}
+            {path:'products/type/:fid',component:Products, props:true},
+            {path:'products/search/:kw',component:Products, props:true},
+            {path:'products/detail/:pid',component:ProductDetail, props:true},
+            {path:'news/detail/:nid',component:NewsInfoDetail},
+            {path:'info/detail/:iid',component:NewsInfoDetail},
     ]},
     { path: '/*', component:NotFound }
   ],

@@ -13,6 +13,16 @@ axios.defaults.withCredentials=true;
 Vue.prototype.$axios=axios;
 Vue.config.productionTip = false;
 
+Vue.filter("dateFilter",function(val){
+    var date=new Date(val);
+    var y=date.getFullYear();
+    var m=date.getMonth()+1;
+    m<10&&(m="0"+m);
+    var d=date.getDate();
+    d<10&&(d="0"+d);
+    return `${y}-${m}-${d}`;
+});
+
 new Vue({
   router,
   store,

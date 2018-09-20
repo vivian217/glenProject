@@ -22,18 +22,18 @@
                 <div class="col-xl-3 col-sm-6 mt-4">
                     <h3 class="pb-2">目录</h3>
                     <ul class="list-unstyled mt-3">
-                        <li class="pb-2">&gt;&nbsp;<a href="#">管段</a></li>
-                        <li class="py-2">&gt;&nbsp;<a href="#">堆焊</a></li>
-                        <li class="py-2">&gt;&nbsp;<a href="#">订制管件</a></li>
-                        <li class="py-2">&gt;&nbsp;<a href="#">锻件</a></li>
-                        <li class="py-2">&gt;&nbsp;<a href="#">对焊件</a></li>
-                        <li class="py-2">&gt;&nbsp;<a href="#">法兰</a></li>
+                        <li class="pb-2">&gt;&nbsp;<router-link to="/products/type/1">管段</router-link></li>
+                        <li class="py-2">&gt;&nbsp;<router-link to="/products/type/2">堆焊</router-link></li>
+                        <li class="py-2">&gt;&nbsp;<router-link to="/products/type/3">订制管件</router-link></li>
+                        <li class="py-2">&gt;&nbsp;<router-link to="/products/type/4">锻件</router-link></li>
+                        <li class="py-2">&gt;&nbsp;<router-link to="/products/type/5">对焊件</router-link></li>
+                        <li class="py-2">&gt;&nbsp;<router-link to="/products/type/6">法兰</router-link></li>
                     </ul>
                 </div>
                 <div class="col-xl-3 col-sm-6 mt-4">
                     <h3 class="pb-2">链接</h3>
-                    <a href="#" class="d-inline-block mt-3">Facebook</a>
-                    <a href="#">LinkedIn</a>
+                    <router-link to="https://www.facebook.com/Glen-Flange-Limited-662831980577025/" class="d-inline-block mt-3">Facebook</router-link>
+                    <router-link to="https://twitter.com/glenflange1">LinkedIn</router-link>
                 </div>
                 <div class="col-xl-3 col-sm-6 mt-4">
                     <h3 class="pb-2">二维码</h3>
@@ -45,13 +45,13 @@
             <div class="my_width m-auto copyright py-3 d-flex flex-wrap">
                 <p class="px-2 m-0">版权&nbsp;&copy;&nbsp;重庆固蓝法兰有限公司所有</p>
                 <ul class="list-unstyled m-0">
-                    <li class="px-2 d-inline-block"><a href="#">产品</a></li>
-                    <li class="px-2 d-inline-block"><a href="#">质检</a></li>
-                    <li class="px-2 d-inline-block"><a href="#">工程</a></li>
-                    <li class="px-2 d-inline-block"><a href="#">项目</a></li>
-                    <li class="px-2 d-inline-block"><a href="#">文件下载</a></li>
-                    <li class="px-2 d-inline-block"><a href="#">关于我们</a></li>
-                    <li class="px-2 d-inline-block"><a href="#">联系我们</a></li>
+                    <li class="px-2 d-inline-block"><router-link to="/products">产品</router-link></li>
+                    <li class="px-2 d-inline-block"><router-link to="/news">新闻</router-link></li>
+                    <li class="px-2 d-inline-block"><router-link to="/info">技术</router-link></li>
+                    <li class="px-2 d-inline-block"><router-link to="/latest-project">项目</router-link></li>
+                    <li class="px-2 d-inline-block"><router-link to="/download">文件下载</router-link></li>
+                    <li class="px-2 d-inline-block"><router-link to="/about-us">关于我们</router-link></li>
+                    <li class="px-2 d-inline-block"><router-link to="/contact-us">联系我们</router-link></li>
                 </ul>
             </div>
         </div>

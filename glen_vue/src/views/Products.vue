@@ -14,22 +14,22 @@
         <h2>产品</h2>
         <ul>
           <li v-for="item in data" :key="item.pid">
-            <router-link :to="'products/detail/'+item.pid"><img :src="item.pic" alt=""/></router-link>
+            <router-link :to="'/products/detail/'+item.pid"><img :src="item.pic" alt=""/></router-link>
             <div>
-              <h5><router-link :to="'products/detail/'+item.pid">{{item.title}}</router-link></h5>
+              <h5><router-link :to="'/products/detail/'+item.pid">{{item.title}}</router-link></h5>
               <p>{{item.subtitle.substring(0,50)+"..."}}</p>
-              <router-link :to="'products/detail/'+item.pid" class="btn text-white py-0">更多详情</router-link>
+              <router-link :to="'/products/detail/'+item.pid" class="btn text-white py-0">更多详情</router-link>
             </div>
           </li>
         </ul>
         <div class="pages mt-5">
           <ul class="pagination justify-content-center">
-            <li class="page-item"><a href="#" class="page-link" @click.prevent="reloadPage(1)">首页</a></li>
-            <li class="page-item"><a href="#" class="page-link" @click.prevent="reloadPage(pno-1)">上一页</a></li>
-            <li class="page-item " v-for="i in pageCount" :class="i==pno?'active':''"><a to="#" class="page-link" @click.prevent="reloadPage(i)">{{i}}</a></li>
-            <li class="page-item"><a href="#" class="page-link" @click.prevent="reloadPage(parseInt(pno)+1)">下一页</a></li>
-            <li class="page-item"><a href="#" class="page-link" @click.prevent="reloadPage(pageCount)">末页</a></li>
-            <li class="page-item disabled"><a href="#" class="page-link border-top-0 border-right-0 border-bottom-0">1/{{pageCount}}</a></li>
+            <li class="page-item"><a href="#" class="page-link" @click.prevent="reloadPage(1,fid,kw)">首页</a></li>
+            <li class="page-item"><a href="#" class="page-link" @click.prevent="reloadPage(pno-1,fid,kw)">上一页</a></li>
+            <li class="page-item " v-for="i in pageCount" :class="i==pno?'active':''"><a to="#" class="page-link" @click.prevent="reloadPage(i,fid,kw)">{{i}}</a></li>
+            <li class="page-item"><a href="#" class="page-link" @click.prevent="reloadPage(parseInt(pno)+1,fid,kw)">下一页</a></li>
+            <li class="page-item"><a href="#" class="page-link" @click.prevent="reloadPage(pageCount,fid,kw)">末页</a></li>
+            <li class="page-item disabled"><a href="#" class="page-link border-top-0 border-right-0 border-bottom-0">{{pno}}/{{pageCount}}</a></li>
           </ul>
         </div>
       </div>
@@ -51,39 +51,40 @@
       data(){
           return {
               fid:this.$route.params.fid,
-              count:"",
-              pSize:"",
-              pageCount:"",
-              pno:"",
-              data:[]
+              kw:this.$route.params.kw,
+              count:"",//数据总量
+              pSize:"",//每页数据条数
+              pageCount:"",//总共页数
+              pno:"",//当前页码
+              data:[]//当前页数据
           }
       },
-      created(){},
-      mounted(){
-        this.loadPage();
+      created(){
+        this.loadPage(1,this.fid,this.kw);
       },
       methods:{
-          loadPage(pno=1){
-              this.$axios.get("http://localhost:6060/pro?pno="+pno).then(res=>{
-                  var {count,pSize,pageCount,pno,data}=res.data;
+          loadPage(pno,fid="",kw=""){
+              var url=`http://localhost:6060/pro?pno=${pno}&fid=${fid}&kw=${kw}`;
+              this.$axios.get(url).then(res=>{
+                  var {pageCount,pno,data}=res.data;
                   this.data=data;
                   this.pno=pno;
                   this.pageCount=pageCount;
+                  //console.log(this.pageCount);
                   if(this.pno==1){
                       $(".pages>ul").children(":lt(2)").addClass("disabled");
                   }else{
                       $(".pages>ul").children(":lt(2)").removeClass("disabled");
                   }
                   if(this.pno==this.pageCount){
-                      $(".pages>ul").children(":gt("+(this.pageCount+1)+")").addClass("disabled");
+                      $(".pages>ul").children(":gt("+this.pageCount+")").addClass("disabled");
                   }else{
-                      $(".pages>ul").children(":gt("+(this.pageCount+1)+")").removeClass("disabled");
+                      $(".pages>ul").children(":gt("+this.pageCount+")").removeClass("disabled");
                   }
               })
           },
-          reloadPage(pno){
-              this.loadPage(pno);
-              console.log(pno);
+          reloadPage(pno,fid,kw){
+              this.loadPage(pno,fid,kw);
           }
       }
   }

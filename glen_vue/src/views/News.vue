@@ -12,106 +12,21 @@
       </div>
       <div>
         <ul>
-          <li>
-            <a href="#">
-              <span>不锈钢管件制造工艺</span>
-              <span>[2018.04.27]</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span>无缝弯头优势总结</span>
-              <span>[2018.04.27]</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span>不锈钢管制造工艺</span>
-              <span>[2018.04.27]</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span>不锈钢弯头与碳钢弯头不同</span>
-              <span>[2018.04.27]</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span>管件类型</span>
-              <span>[2018.04.27]</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span>管道配件</span>
-              <span>[2018.04.27]</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span>配件中弯头的分类</span>
-              <span>[2018.04.27]</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span>配件技术要求</span>
-              <span>[2018.04.27]</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span>管件过程</span>
-              <span>[2018.04.27]</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span>管件加工方法</span>
-              <span>[2018.04.27]</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span>管件加工方法</span>
-              <span>[2018.04.27]</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span>管件加工方法</span>
-              <span>[2018.04.27]</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span>管件加工方法</span>
-              <span>[2018.04.27]</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span>管件加工方法</span>
-              <span>[2018.04.27]</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <span>管件加工方法</span>
-              <span>[2018.04.27]</span>
-            </a>
+          <li v-for="item in list">
+            <router-link :to="'/news/detail/'+item.id">
+              <span>{{item.title}}</span>
+              <span>[{{item.date | dateFilter}}]</span>
+            </router-link>
           </li>
         </ul>
         <div class="pages mt-5">
           <ul class="pagination justify-content-center">
-            <li class="page-item disabled"><a href="#" class="page-link">首页</a></li>
-            <li class="page-item disabled"><a href="#" class="page-link">上一页</a></li>
-            <li class="page-item active"><a href="#" class="page-link">1</a></li>
-            <li class="page-item"><a href="#" class="page-link">2</a></li>
-            <li class="page-item"><a href="#" class="page-link">下一页</a></li>
-            <li class="page-item"><a href="#" class="page-link">末页</a></li>
-            <li class="page-item disabled"><a href="#" class="page-link border-top-0 border-right-0 border-bottom-0">1/2</a></li>
+            <li class="page-item"><a href="#" class="page-link" @click.prevent="reloadList(1)">首页</a></li>
+            <li class="page-item"><a href="#" class="page-link" @click.prevent="reloadList(pno-1)">上一页</a></li>
+            <li class="page-item" v-for="i in pageTotal" :class="i==pno?'active':''"><a href="#" class="page-link" @click.prevent="reloadList(i)">{{i}}</a></li>
+            <li class="page-item"><a href="#" class="page-link" @click.prevent="reloadList(parseInt(pno)+1)">下一页</a></li>
+            <li class="page-item"><a href="#" class="page-link" @click.prevent="reloadList(pageTotal)">末页</a></li>
+            <li class="page-item disabled"><a href="#" class="page-link border-top-0 border-right-0 border-bottom-0">{{pno}}/{{pageTotal}}</a></li>
           </ul>
         </div>
       </div>
@@ -123,12 +38,45 @@
   import Banner from '@/components/banner.vue'
   import SubNav1 from '@/components/subnav1.vue'
   import Contact from '@/components/subContact.vue'
-
+  import $ from 'jquery'
   export default {
       components:{
           Banner,
           SubNav1,
           Contact
+      },
+      data(){
+          return{
+              list:[],
+              pno:1,
+              pageTotal:0
+          }
+      },
+      mounted(){
+          this.loadList(this.pno)
+      },
+      methods:{
+          loadList(pno){
+            this.$axios.get("http://localhost:6060/news?pno="+pno).then(res=>{
+                var {pno,pTotal,data}=res.data;
+                this.pno=pno;
+                this.pageTotal=pTotal;
+                this.list=data;
+                if(this.pno==1){
+                    $(".pages>ul").children(":lt(2)").addClass("disabled");
+                }else{
+                    $(".pages>ul").children(":lt(2)").removeClass("disabled");
+                }
+                if(this.pno==this.pageTotal){
+                    $(".pages>ul").children(":gt("+this.pageTotal+")").addClass("disabled");
+                }else{
+                    $(".pages>ul").children(":gt("+this.pageTotal+")").removeClass("disabled");
+                }
+            })
+          },
+          reloadList(pno){
+              this.loadList(pno);
+          }
       }
   }
 </script>
@@ -163,5 +111,13 @@
         position: absolute;
         right: 0;
         font-size: 0.8rem;
+    }
+    #section>div:last-child>div.pages .page-item .page-link{
+        color: #666;
+    }
+    #section>div:last-child>div.pages .page-item.active .page-link{
+        background-color: #0c6ca3;
+        border-color: transparent;
+        color: #fff;
     }
 </style>

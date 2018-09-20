@@ -127,12 +127,10 @@
                     <div class="email-box mt-xl-3 pt-xl-5 pt-lg-4 pt-sm-3">
                         <p class="text-white font-weight-bold mb-1">关注我们的时事通讯</p>
                         <p class="text-white pb-xl-4 pb-lg-3 pb-md-1" style="white-space: nowrap;">注册我们的时事通讯，获得更多的活动和促销！</p>
-                        <form action="#" id="emailForm">
-                            <p class="email py-2 px-3">
-                                <input type="email" name="email" placeholder="请在此处输入邮箱" class="bg-transparent border-0" v-model="email"/>
-                                <input type="button" class="border-0" @click="email_check"/>
-                            </p>
-                        </form>
+                        <p class="email py-2 px-3">
+                            <input type="email" name="email" placeholder="请在此处输入邮箱" class="bg-transparent border-0 w-75" v-model="email"/>
+                            <input type="button" class="border-0" @click="email_submit"/>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -161,13 +159,15 @@
 
         },
         methods:{
-            email_check(){
+            email_submit(){
                 var reg=/^[a-z0-9]+@[a-z0-9]+\.com(\.[a-z]+)?$/i;
-                if(reg.test(this.email)){
-                    $("#emailForm").submit()
-                }else{
-                    alert("请输入有效的邮箱地址...");
-                };
+                if(!reg.test(this.email)){
+                    alert("邮箱格式有误，请重新输入...");
+                    return;
+                }
+                this.$axios.get("http://localhost:6060/form/email?email="+this.email).then(res=>{
+                    alert(res.data.msg);
+                })
             }
         }
     }

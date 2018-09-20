@@ -5,27 +5,43 @@ router.get("/",(req,res)=>{
   var kw=req.query.kw;
   var output={
     fid:req.query.fid || "",
-    count:0,//×Ü¹²Êý¾ÝÌõÊý
-    pno:req.query.pno || 1,//µ±Ç°Ò³ÂëÊý£¬Ä¬ÈÏÎªµÚÒ»Ò³
-    pSize:10,//Ã¿Ò³ÏÔÊ¾Êý¾Ý
-    pageCount:0,//×Ü¹²Ò³Êý
-    data:[]//Ã¿Ò³µÄÊý¾Ý
+    count:0,//æ•°æ®æ€»æ¡æ•°
+    pno:req.query.pno || 1,//å½“å‰é¡µç 
+    pSize:10,//æ¯é¡µæ•°æ®æ•°
+    pageCount:0,//æ€»å…±é¡µæ•°
+    data:[]//å…·ä½“æ•°æ®
   };
   var sql="SELECT pid,fid,title,subtitle,(SELECT pic FROM glen_products_pic WHERE glen_products_pic.pid = glen_products.pid LIMIT 1) as pic FROM glen_products";
   query(sql,[]).then(result=>{
+    if(output.fid){
+      sql +=" WHERE fid=? ";
+      return query(sql,[output.fid]);
+    }
+    if(kw){
+      var kws=kw.split(" ");
+      kws.forEach((elem,i,arr)=>{
+        arr[i]=`title like '%${elem}%'`;
+      });
+      var where=kws.join(" and ");
+      sql += ` WHERE ${where} `;
+      console.log(sql);
+      return query(sql,[]);
+    }
+    return query(sql,[]);
+  }).then(result=>{
     output.count=result.length;
     output.pageCount=Math.ceil(output.count/output.pSize);
-    if(!output.fid){
-      sql+=" LIMIT ?,?";
-      return query(sql,[(output.pno-1)*output.pSize,output.pSize]);
-    }else{
-      sql +=" WHERE fid=? LIMIT ?,?";
-      return query(sql,[output.fid,(output.pno-1)*output.pSize,output.pSize]);
+    var offset=parseInt((output.pno-1)*output.pSize);//åç§»é‡ï¼Œæ¯æ¬¡limitå¼€å§‹çš„å€¼
+    output.pSize=parseInt(output.pSize);
+    sql+=" LIMIT ?,?";
+    if(output.fid){
+      return query(sql,[output.fid,offset,output.pSize]);
     }
-  })
-  .then(result=>{
-      output.data=result;
-      res.send(output);
-    });
+    return query(sql,[offset,output.pSize]);
+  }).then(data=>{
+    output.data=data;
+    //console.log(output.pageCount,output.pno,output.count);
+    res.send(output);
+  });
 });
 module.exports=router;

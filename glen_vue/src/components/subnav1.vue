@@ -2,32 +2,29 @@
     <div>
         <h3>产品分类</h3>
         <ul>
-            <li><a href="#">管轴</a></li>
-            <li><a href="#">焊接覆盖层</a></li>
-            <li><a href="#">订制法兰管件</a></li>
-            <li><a href="#">锻件</a></li>
+            <li><a href="/products/type/1">管轴</a></li>
+            <li><a href="/products/type/2">焊接覆盖层</a></li>
+            <li><a href="/products/type/3">订制法兰管件</a></li>
+            <li><a href="/products/type/4">锻件</a></li>
             <li @mouseenter="showSub" @mouseleave="hideSub">
-                <a href="#">焊接管件</a>
+                <a href="/products/type/5">焊接管件</a>
                 <ul>
-                    <li><a href="#">对焊弯头</a></li>
-                    <li><a href="#">对焊三通</a></li>
-                    <li><a href="#">管帽</a></li>
-                    <li><a href="#">对焊大小头</a></li>
-                    <li><a href="#">对焊管端</a></li>
+                    <li><a href="/products/detail/7">双相钢弯头</a></li>
+                    <li><a href="/products/detail/10">大尺寸对焊件</a></li>
+                    <li><a href="/products/detail/13">不锈钢对焊弯头</a></li>
+                    <li><a href="/products/detail/15">合金钢对焊弯头</a></li>
+                    <li><a href="/products/detail/21">铜镍对焊弯头</a></li>
                 </ul>
             </li>
             <li @mouseenter="showSub" @mouseleave="hideSub">
-                <a href="#">法兰</a>
+                <a href="/products/type/6">法兰</a>
                 <ul>
-                    <li><a href="#">ANSI B16.5 法兰 (ASME, ASA)</a></li>
-                    <li><a href="#">ANSI B16.47 法兰</a></li>
-                    <li><a href="#">DIN 法兰 PN6-PN40( DIN 法兰)</a></li>
-                    <li><a href="#">EN 1092-1 法兰 PN6-PN63</a></li>
-                    <li><a href="#">JIS B 2220 法兰</a></li>
-                    <li><a href="#">BS 4504 法兰 PN6-PN64</a></li>
-                    <li><a href="#">GOST (ГОСТ) 12820-80 法兰</a></li>
-                    <li><a href="#">SABS SANS 1123 法兰</a></li>
-                    <li><a href="#">法兰材料</a></li>
+                    <li><a href="/products/detail/6">ASME B16.47法兰</a></li>
+                    <li><a href="/products/detail/14">钛合金板法兰</a></li>
+                    <li><a href="/products/detail/16">合金钢套接字焊</a></li>
+                    <li><a href="/products/detail/17">铜镍90/10盲板法兰</a></li>
+                    <li><a href="/products/detail/18">ASTM ASME不锈钢管法兰和管件</a></li>
+                    <li><a href="/products/detail/19">BS4504 10/3盲锻造合金钢法兰</a></li>
                 </ul>
             </li>
         </ul>

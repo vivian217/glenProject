@@ -11,12 +11,12 @@
           <li class="nav-item py-md-4 dropdown" id="product">
             <router-link to="/products" class="nav-link py-0 px-3 text-white my_font">产品</router-link>
             <ul class="dropdown-menu my_product my_header_bg m-0 p-0">
-              <li class="dropdown-item px-md-2"><router-link to="products/1">管段</router-link></li>
-              <li class="dropdown-item px-md-2"><a href="#">堆焊</a></li>
-              <li class="dropdown-item px-md-2"><a href="#">订制管件</a></li>
-              <li class="dropdown-item px-md-2"><a href="#">锻件</a></li>
-              <li class="dropdown-item px-md-2"><a href="#">对焊件</a></li>
-              <li class="dropdown-item px-md-2"><a href="#">法兰</a></li>
+              <li class="dropdown-item px-md-2"><a href="/products/type/1">管段</a></li>
+              <li class="dropdown-item px-md-2"><a href="/products/type/2">堆焊</a></li>
+              <li class="dropdown-item px-md-2"><a href="/products/type/3">订制管件</a></li>
+              <li class="dropdown-item px-md-2"><a href="/products/type/4">锻件</a></li>
+              <li class="dropdown-item px-md-2"><a href="/products/type/5">对焊件</a></li>
+              <li class="dropdown-item px-md-2"><a href="/products/type/6">法兰</a></li>
             </ul>
           </li>
           <li class="nav-item py-md-4"><router-link to="/news" class="nav-link py-0 px-3 text-white my_font">新闻</router-link></li>
@@ -54,9 +54,9 @@
         <span @click="sub_close"><img src="/img/sidebar/close.png" alt=""/></span>
       </p>
       <p>如果您需要我们的回复，请发送您的联系信息给我们</p>
-      <input type="text" placeholder="请输入邮箱..." name="sub_email" class="sub_email"/>
-      <textarea name="sub_textarea" class="sub_textarea"></textarea>
-      <a href="#"></a>
+      <input type="text" placeholder="请输入邮箱..." name="sub_email" class="sub_email" v-model="email"/>
+      <textarea name="sub_textarea" class="sub_textarea" v-model="content"></textarea>
+      <a href="#" @click="feedback"></a>
     </div>
   </header>
 </template>
@@ -65,7 +65,12 @@
   import "@/assets/css/header.css"
   import $ from "jquery"
   export default {
-      data(){return{}},
+      data(){
+          return{
+              email:"",
+              content:""
+          }
+      },
       methods:{
         aft_show(){
             $(".inquiry_bef").hide();
@@ -88,6 +93,26 @@
         },
         toTop(){
             window.scrollTo(0,0);
+        },
+        feedback(){
+            var reg=/^[a-z0-9]+@[a-z0-9]+\.com(\.[a-z]+)?$/i;
+            if(this.email==""){
+                alert("邮箱不能为空...");
+                return;
+            }
+            if(!reg.test(this.email)){
+                alert("邮箱格式不正确");
+                return;
+            }
+            if(this.content==""){
+                alert("内容不能为空...")
+                return;
+            }
+            var url="http://localhost:6060/form/feedback?email="+this.email+"&content="+this.content;
+                this.$axios.get(url).then(res=>{
+                    alert(res.data.msg);
+            })
+
         }
       }
   }

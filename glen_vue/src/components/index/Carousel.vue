@@ -10,12 +10,10 @@
                 <span class="carousel-control-next-icon"></span>
             </a>
             <!--搜索框-->
-            <form action="">
                 <div class="position-absolute my_search">
-                    <input type="text" class="h-100 w-75 border-0 bg-transparent text-white" v-model="kw" @focus="inp_focus" @blur="inp_blur"/>
-                    <button class="border-0 h-100 position-absolute"></button>
+                    <input type="text" class="h-100 w-75 border-0 bg-transparent text-white" v-model="kw" @focus="inp_focus" @blur="inp_blur" @keyup.13="search"/>
+                    <button class="border-0 h-100 position-absolute" @click="search"></button>
                 </div>
-            </form>
         </div>
 </template>
 
@@ -43,6 +41,11 @@
             },
             inp_blur(){
                 if(this.kw=="")this.kw="请输入搜索产品...";
+            },
+            search(){
+                if(this.kw!="请输入搜索产品..." && this.kw.trim()!=""){
+                    this.$router.push("/products/search/"+this.kw);
+                }
             }
         }
     }
