@@ -22,7 +22,7 @@
                             <img src="/img/detail/qy-btuleft.png" alt="" class="btn p-0 border-0 float-left mt-2"/>
                             <div class="d-inline-block">
                                 <ul>
-                                    <li v-for="(item,i) in pics" :class="i==0?'active':''"><img :src="item.pic" alt="" :key="item.id"/></li>
+                                    <li v-for="(item,i) in pics" :class="i==0?'active':''" :data-index="i"><img :src="item.pic" alt="" :key="item.id"/></li>
                                 </ul>
                             </div>
                             <img src="/img/detail/qy-bturight.png" alt="" class="btn p-0 border-0 float-right mt-2"/>
@@ -109,14 +109,31 @@
                       backgroundPosition:`-${2.3*(left-10)}px -${2.3*top}px`
                   });
               });
+
+
+              /*左边按钮*/
               var btnLeft=ulImgs.parent().prev();
               btnLeft.click(function(){
+                  var l=ulImgs.children().length;
+                  var l_mean;
+                  if(l<=4){
+                      l_mean=0;
+                  }else{
+                      l_mean=l-4;
+                  }
+                  var w=73;
                  var li=ulImgs.children(".active");
-                 if(li.prev().length!=0){
-                     li.removeClass("active").prev().addClass("active");
+                 var i=li[0].dataset.index;
+                 i--;
+                 if(i<0){
+                     i=l-1;
+                 }
+                 ulImgs.children().eq(i).addClass("active").siblings().removeClass("active");
+                 var ml=i*w;
+                 if(ml<=l_mean*w){
+                     ulImgs.css({marginLeft:-ml+"px"})
                  }else{
-                     li.removeClass("active");
-                     ulImgs.children(":last-child").addClass("active");
+                     ulImgs.css({marginLeft:-(l_mean*w)+"px"})
                  }
                  li=ulImgs.children(".active");
                   $("div.card>img")[0].src=li.children()[0].src;
@@ -124,14 +141,27 @@
                       background:`url(${li.children()[0].src})`
                   });
               });
+              /*右边按钮*/
               var btnRight=ulImgs.parent().next();
               btnRight.click(function(){
-                  var li=ulImgs.children(".active");
-                  if(li.next().length!=0){
-                      li.removeClass("active").next().addClass("active");
+                  var l=ulImgs.children().length;
+                  var l_mean;
+                  if(l<=4){
+                      l_mean=0;
                   }else{
-                      li.removeClass("active");
-                      ulImgs.children(":first-child").addClass("active");
+                      l_mean=l-4;
+                  }
+                  var w=73;
+                  var li=ulImgs.children(".active");
+                  var i=li[0].dataset.index;
+                  i++;
+                  if(i>=l)i=0;
+                  ulImgs.children().eq(i).addClass("active").siblings().removeClass("active");
+                  var ml=(i-3)*w;
+                  if(i<=3){
+                      ulImgs.css({marginLeft:0})
+                  }else{
+                      ulImgs.css({marginLeft:-ml+"px"})
                   }
                   li=ulImgs.children(".active");
                   $("div.card>img")[0].src=li.children()[0].src;
@@ -179,6 +209,9 @@
     div.card>div.card-body>div{
         width: 284px;
         overflow: hidden;
+    }
+    div.card>div.card-body>div>ul{
+        transition:all 2000 linear;
     }
     div.card>div.card-body>div>ul>li{
         float: left;
